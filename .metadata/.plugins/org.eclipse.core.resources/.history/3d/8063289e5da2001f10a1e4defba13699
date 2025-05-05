@@ -1,0 +1,9 @@
+package main;
+
+public class QuizApplication {
+
+	public QuizApplication() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

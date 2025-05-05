@@ -1,0 +1,94 @@
+package main;
+
+import database.DatabaseConnection;
+import model.Participant;
+import model.Quiz;
+import model.Question;
+import model.MultipleChoiceQuestion;
+import service.QuizOperations;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class QuizApplication implements QuizOperations {
+    private Connection conn;
+
+    public QuizApplication() {
+        try {
+            conn = DatabaseConnection.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void takeQuiz(Participant participant, Quiz quiz) {
+        int score = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        for (Question question : quiz.getQuestions()) {
+            System.out.println(question.getQuestionText());
+            if (question instanceof MultipleChoiceQuestion) {
+                for (String option : ((MultipleChoiceQuestion) question).getOptions()) {
+                    System.out.println(option);
+                }
+            }
+
+            System.out.print("Your answer: ");
+            String answer = scanner.nextLine();
+            if (question.checkAnswer(answer)) {
+                score++;
+            }
+        }
+        saveResult(participant, quiz, score);
+    }
+
+    private void saveResult(Participant participant, Quiz quiz, int score) {
+        try (PreparedStatement stmt = conn.prepareStatement(
+                "INSERT INTO QuizResults (participant_id, quiz_id, score) VALUES (?, ?, ?)")) {
+            stmt.setInt(1, participant.getParticipantId());
+            stmt.setInt(2, quiz.getQuizId());
+            stmt.setInt(3, score);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void viewScore(Participant participant) {
+        try (PreparedStatement stmt = conn.prepareStatement(
+                "SELECT score, date_taken FROM QuizResults WHERE participant_id = ?")) {
+            stmt.setInt(1, participant.getParticipantId());
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                System.out.println("Score: " + rs.getInt("score") + ", Date: " + rs.getTimestamp("date_taken"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        QuizApplication app = new QuizApplication();
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        Participant participant = new Participant(1, "John Doe", "john@example.com");
+        Quiz quiz = new Quiz(1, "Sample Quiz", "A simple quiz for demonstration");
+        
+        List<String> options = new ArrayList<>();
+        options.add("A. Option 1");
+        options.add("B. Option 2");
+        options.add("C. Option 3");
+        
+        Question question = new MultipleChoiceQuestion(1, "Sample question?", "B. Option 2", options);
+        quiz.addQuestion(question);
+
+        executor.submit(() -> app.takeQuiz(participant, quiz));
+        executor.shutdown();
+    }
+}

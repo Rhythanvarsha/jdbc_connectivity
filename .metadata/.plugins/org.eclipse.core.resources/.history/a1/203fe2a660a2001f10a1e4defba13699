@@ -1,0 +1,29 @@
+package service;
+
+import database.DatabaseConnection;
+import model.Participant;
+import model.Quiz;
+import model.Question;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class QuizServiceImpl implements QuizService {
+
+    @Override
+    public void registerParticipant(Participant participant) {
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            String sql = "INSERT INTO Participants (name, email) VALUES (?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, participant.getName());
+            statement.setString(2, participant.getEmail());
+            statement.executeUpdate();
+            System.out.println("Participant registered successfully.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Add other methods (addQuiz, addQuestion, etc.) similarly.
+}

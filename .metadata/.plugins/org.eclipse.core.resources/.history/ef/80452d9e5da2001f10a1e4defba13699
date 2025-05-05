@@ -1,0 +1,9 @@
+package service;
+
+public class QuizService {
+
+	public QuizService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

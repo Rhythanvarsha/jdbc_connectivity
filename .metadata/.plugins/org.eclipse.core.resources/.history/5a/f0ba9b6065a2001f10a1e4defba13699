@@ -1,0 +1,13 @@
+package service;
+
+import model.Participant;
+import model.Quiz;
+import model.Question;
+
+public interface QuizService {
+    void registerParticipant(Participant participant);
+    void addQuiz(Quiz quiz);
+    void addQuestion(Question question);
+    void takeQuiz(Participant participant, int quizId);
+    void viewScore(Participant participant);
+}

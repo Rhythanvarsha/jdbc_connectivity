@@ -1,0 +1,33 @@
+// Quiz.java 
+package com.quizapplication.model;
+ 
+import java.sql.Timestamp; 
+public class Quiz { private int quizId; 
+private String quizName;
+private String description;
+private Timestamp createdAt; // Getters and Setters }
+public int getQuizId() {
+	return quizId;
+}
+public void setQuizId(int quizId) {
+	this.quizId = quizId;
+} 
+public String getQuizName() {
+	return quizName;
+}
+public void setQuizName(String quizName) {
+	this.quizName = quizName;
+}
+public String getDescription() {
+	return description;
+}
+public void setDescription(String description) {
+	this.description = description;
+}
+public Timestamp getCreatedAt() {
+	return createdAt;
+}
+public void setCreatedAt(Timestamp createdAt) {
+	this.createdAt = createdAt;
+}
+}

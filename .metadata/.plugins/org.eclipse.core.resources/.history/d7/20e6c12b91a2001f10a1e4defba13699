@@ -1,0 +1,85 @@
+package model;
+
+public class Participant {
+    private int id;
+    private String name;
+    private String email;
+    private int score; // Field to store the participant's score
+
+    // Constructor with name and email (generate id if needed)
+    public Participant(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.score = 0; // Initialize score to 0
+    }
+
+    // Overloaded constructor without id for cases where id might be set later
+    public Participant(String name, String email) {
+        this.name = name;
+        this.email = email;
+        this.score = 0; // Initialize score to 0
+    }
+
+    public Participant(int participantId, String name) {
+        this.participantId = participantId;
+        this.name = name;
+    }
+
+	// Getter and setter methods for id, name, and email
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // Method to get the score
+    public int getScore() {
+        return score;
+    }
+
+    // Method to set the score
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    // Method to add points to the score
+    public void addScore(int points) {
+        this.score += points;
+    }
+
+    // Method to return a formatted string with participant details
+    @Override
+    public String toString() {
+        return "Participant ID: " + id + "\nName: " + name + "\nEmail: " + email + "\nScore: " + score;
+    }
+
+	public int getParticipantId() {
+		
+		return id;
+	}
+
+	public void setParticipantId(int int1) {
+		// TODO Auto-generated method stub
+		this.id=int1;
+		
+	}
+}

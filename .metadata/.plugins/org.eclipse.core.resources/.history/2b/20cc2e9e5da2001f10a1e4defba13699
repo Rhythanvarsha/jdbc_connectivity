@@ -1,0 +1,9 @@
+package database;
+
+public class DatabaseConnection {
+
+	public DatabaseConnection() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

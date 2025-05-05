@@ -1,0 +1,4 @@
+// Quiz.java package com.quizapplication.model; 
+import java.sql.Timestamp;
+package com.quizapplication.model;
+public class Quiz { private int quizId; private String quizName; private String description; private Timestamp createdAt; // Getters and Setters }

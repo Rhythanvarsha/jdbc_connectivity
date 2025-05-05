@@ -1,0 +1,4 @@
+Quiz Title: Python
+Description: About python
+Questions:
+- What is function in python?

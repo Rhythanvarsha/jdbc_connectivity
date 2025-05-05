@@ -1,0 +1,4 @@
+Quiz Title: python
+Description: Question reg python
+Questions:
+- Explain briefly about functions in python?

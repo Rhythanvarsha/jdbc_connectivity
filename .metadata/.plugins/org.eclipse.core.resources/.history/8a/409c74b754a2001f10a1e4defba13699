@@ -1,0 +1,9 @@
+package model;
+
+public class Participant {
+
+	public Participant() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

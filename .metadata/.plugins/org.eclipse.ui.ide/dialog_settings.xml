@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="619"/>
+		<item key="DIALOG_Y_ORIGIN" value="89"/>
+		<item key="DIALOG_WIDTH" value="700"/>
+		<item key="DIALOG_HEIGHT" value="645"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="false"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\kavin\OneDrive\Desktop\Networking\socket programming"/>
+			<item value="C:\Users\kavin\Downloads\Quiz.zip"/>
+			<item value="C:\Users\kavin\OneDrive\Desktop\jdbc connectivity\Quiz"/>
+			<item value="C:\Users\kavin\Downloads\SchedulingApp\QuizAppilication"/>
+			<item value="C:\Users\kavin\Music\University-Quiz App\QuizApp"/>
+			<item value="C:\Users\kavin\Downloads\SchedulingApp\Scheduling"/>
+			<item value="C:\Users\kavin\Music\Mongodb"/>
+			<item value="C:\Users\kavin\Downloads\SchedulingApp"/>
+			<item value="C:\Users\kavin\Music\Scheduling"/>
+			<item value="C:\Users\kavin\Music\SchedulingApp"/>
+			<item value="C:\Users\kavin\Music\PROJECT"/>
+			<item value="C:\Users\kavin\Music\New folder"/>
+			<item value="C:\Users\kavin\Music\BankingApp"/>
+			<item value="C:\Users\kavin\OneDrive\Desktop\project java\bankingApp"/>
+			<item value="C:\Users\kavin\OneDrive\Desktop\project java\BankingApp"/>
+		</list>
+	</section>
+</section>

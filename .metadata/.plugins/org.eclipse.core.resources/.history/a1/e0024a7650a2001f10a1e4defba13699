@@ -1,0 +1,9 @@
+package model;
+
+public class AQuiz {
+
+	public AQuiz() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

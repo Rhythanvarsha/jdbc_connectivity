@@ -1,0 +1,82 @@
+//package model;
+//
+//public class Quiz {
+//    private int quizId;
+//    private String title;
+//    private String description;
+//
+//    public Quiz(int quizId, String title, String description) {
+//        this.quizId = quizId;
+//        this.title = title;
+//        this.description = description;
+//    }
+//
+//    public int getQuizId() {
+//        return quizId;
+//    }
+//
+//    public void setQuizId(int quizId) {
+//        this.quizId = quizId;
+//    }
+//
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Quiz ID: " + quizId + ", Title: " + title + ", Description: " + description;
+//    }
+//}
+package model;
+
+public class Quiz {
+    private int quizId;
+    private String title;
+    private String description;
+
+    // Existing constructors (if any)
+
+    // New constructor with parameters title and description
+    public Quiz(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
+    // Getters and Setters
+    public int getQuizId() {
+        return quizId;
+    }
+
+    public void setQuizId(int quizId) {
+        this.quizId = quizId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}

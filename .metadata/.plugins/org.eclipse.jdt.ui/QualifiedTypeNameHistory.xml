@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="exception.BankingException"/>
+    <fullyQualifiedTypeName name="service.TransactionService"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="interfaces.EventScheduler"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="database.SessionDAO"/>
+    <fullyQualifiedTypeName name="service.EventSchedulerImpl"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="model.Session"/>
+    <fullyQualifiedTypeName name="exception.ScheduleConflictException"/>
+    <fullyQualifiedTypeName name="model.Speaker"/>
+    <fullyQualifiedTypeName name="model.Attendee"/>
+    <fullyQualifiedTypeName name="service.QuizService"/>
+</qualifiedTypeNameHistroy>

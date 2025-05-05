@@ -1,0 +1,87 @@
+package main;
+
+import model.Participant;
+import model.Quiz;
+import model.Question;
+import service.QuizService;
+import service.QuizServiceImpl;
+
+import java.util.Scanner;
+
+public class QuizApplication {
+    private static final QuizService quizService = new QuizServiceImpl();
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("\n--- Online Quiz Application ---");
+            System.out.println("1. Register Participant");
+            System.out.println("2. Add Quiz");
+            System.out.println("3. Add Question");
+            System.out.println("4. Take Quiz");
+            System.out.println("5. View Score");
+            System.out.println("6. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1 -> registerParticipant();
+                case 2 -> addQuiz();
+                case 3 -> addQuestion();
+                case 4 -> takeQuiz();
+                case 5 -> viewScore();
+                case 6 -> {
+                    System.out.println("Exiting application...");
+                    return;
+                }
+                default -> System.out.println("Invalid option, please try again.");
+            }
+        }
+    }
+
+    private static void registerParticipant() {
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter email: ");
+        String email = scanner.nextLine();
+        quizService.registerParticipant(new Participant(0, name, email));
+    }
+
+    private static void addQuiz() {
+        System.out.print("Enter quiz title: ");
+        String title = scanner.nextLine();
+        System.out.print("Enter quiz description: ");
+        String description = scanner.nextLine();
+        quizService.addQuiz(new Quiz(0, title, description));
+    }
+
+    private static void addQuestion() {
+        System.out.print("Enter quiz ID: ");
+        int quizId = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Enter question text: ");
+        String questionText = scanner.nextLine();
+        System.out.print("Enter question type (MultipleChoice/TrueFalse): ");
+        String questionType = scanner.nextLine();
+        System.out.print("Enter correct answer: ");
+        String correctAnswer = scanner.nextLine();
+        quizService.addQuestion(new Question(0, quizId, questionText, questionType, correctAnswer));
+    }
+
+    private static void takeQuiz() {
+        System.out.print("Enter participant ID: ");
+        int participantId = scanner.nextInt();
+        System.out.print("Enter quiz ID: ");
+        int quizId = scanner.nextInt();
+        Participant participant = new Participant(participantId, null, null);
+        quizService.takeQuiz(participant, quizId);
+    }
+
+    private static void viewScore() {
+        System.out.print("Enter participant ID: ");
+        int participantId = scanner.nextInt();
+        Participant participant = new Participant(participantId, null, null);
+        quizService.viewScore(participant);
+    }
+}

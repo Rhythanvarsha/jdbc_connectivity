@@ -1,0 +1,72 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Quiz {
+    private int id;
+    private String title;
+    private String description;
+    private List<Question> questions;
+
+    // Constructor
+    public Quiz(int id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.questions = new ArrayList<>(); // Initialize questions list
+    }
+
+    public Quiz(String title, String description) {
+        this.id = 0;  // Default id, or you could use a more suitable value like -1
+        this.title = title;
+        this.description = description;
+        this.questions = new ArrayList<>();  // Initialize questions list
+    }
+
+
+	// Getter and setter methods for id, title, and description
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Method to add a question to the quiz
+    public void addQuestion(Question question) {
+        questions.add(question);
+    }
+
+    // Method to retrieve the list of questions
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    // Method to return a formatted string with quiz details
+    @Override
+    public String toString() {
+        return "Quiz ID: " + id + "\nTitle: " + title + "\nDescription: " + description + "\nNumber of Questions: " + questions.size();
+    }
+
+    public void setQuizId(int quizId) {
+        this.id = quizId;  // Assign the passed value to the class field
+    }
+}
